@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import CustomForm from './Components/CustomForm';
 
 function App(props) {
+  const [ userInput, setUserInput ] = useState('');
   return (
     <div className="App">
-      <CustomForm {...props}/>
+      <CustomForm {...props} userInput={userInput} setUserInput={setUserInput}/>
     </div>
   );
 }

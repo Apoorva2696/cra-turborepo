@@ -1,4 +1,5 @@
 import React from 'react';
+import { CustomButton } from 'ui';
 import ToDo from './ToDo';
  
 const ToDoList = ({toDoList, handleToggle, handleFilter}) => {
@@ -9,7 +10,7 @@ const ToDoList = ({toDoList, handleToggle, handleFilter}) => {
                    <ToDo key={todo.id + index} todo={todo} handleToggle={handleToggle} handleFilter={handleFilter}/>
                )
            })}
-           <button style={{margin: '20px'}} onClick={handleFilter}>Clear Completed</button>
+           <CustomButton style={{margin: '20px'}} onClick={handleFilter} label='Clear Completed'/>
        </div>
    );
 };

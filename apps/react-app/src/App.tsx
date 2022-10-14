@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import ToDoList from "./Components/ToDoList";
 import ToDoForm from 'react-sub-app';
-import {Button} from 'ui'
+import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
 
 function App() {
   
   const [ toDoList, setToDoList ] = useState([{
     "id": 1,
     "task": "Go to Store",
-    "complete": true
+    "complete": false
+  },{
+    "id": 2,
+    "task": "Do Laundry",
+    "complete": false
   }]);
 
   const handleToggle = (id) => {
@@ -25,11 +29,24 @@ function App() {
     setToDoList(filtered);
   }
 
+  const addTask = (userInput ) => {
+    let copy = [...toDoList];
+    copy = [...copy, { id: toDoList.length + 1, task: userInput, complete: false }];
+    setToDoList(copy);
+  }
+
   return (
     <div className="App">
+      <Card variant="outlined" sx={{ width: '600px', margin: '100px 0 0 500px' }}>
+      <CardHeader title={<Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+      To-Do List
+      </Typography>}/>
+      <Divider/>
+      <CardContent>
       <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/>
-      <Button />
-      <ToDoForm />
+      <ToDoForm addTask={addTask}/>
+      </CardContent>
+      </Card>
     </div>
   );
 }

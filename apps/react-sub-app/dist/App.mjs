@@ -1,35 +1,47 @@
-var __defProp = Object.defineProperty;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-
 // src/App.tsx
-import React2 from "react";
+import { useState } from "react";
 
 // src/Components/CustomForm.jsx
 import React from "react";
-var CustomForm = () => {
-  return /* @__PURE__ */ React.createElement("div", null, "Child App");
+import { jsx, jsxs } from "react/jsx-runtime";
+var CustomForm = ({ addTask, userInput, setUserInput }) => {
+  const handleChange = (e) => {
+    setUserInput(e.currentTarget.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addTask(userInput);
+    setUserInput("");
+  };
+  return /* @__PURE__ */ jsxs("form", {
+    onSubmit: handleSubmit,
+    children: [
+      /* @__PURE__ */ jsx("input", {
+        value: userInput,
+        type: "text",
+        onChange: handleChange,
+        placeholder: "Enter task..."
+      }),
+      /* @__PURE__ */ jsx("button", {
+        children: "Submit"
+      })
+    ]
+  });
 };
 var CustomForm_default = CustomForm;
 
 // src/App.tsx
+import { jsx as jsx2 } from "react/jsx-runtime";
 function App(props) {
-  return /* @__PURE__ */ React2.createElement("div", {
-    className: "App"
-  }, /* @__PURE__ */ React2.createElement(CustomForm_default, __spreadValues({}, props)));
+  const [userInput, setUserInput] = useState("");
+  return /* @__PURE__ */ jsx2("div", {
+    className: "App",
+    children: /* @__PURE__ */ jsx2(CustomForm_default, {
+      ...props,
+      userInput,
+      setUserInput
+    })
+  });
 }
 var App_default = App;
 export {

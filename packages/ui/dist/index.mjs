@@ -1,6 +1,8 @@
-// Button.tsx
+// CustomButton.tsx
 import * as React from "react";
-var Button = () => /* @__PURE__ */ React.createElement("button", null, "Submit");
+var CustomButton = (props) => /* @__PURE__ */ React.createElement("button", {
+  ...props
+}, props.label);
 export {
-  Button
+  CustomButton
 };

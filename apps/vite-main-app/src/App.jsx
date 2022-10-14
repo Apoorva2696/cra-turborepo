@@ -2,7 +2,7 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import SubApp from 'vite-sub-app'
-
+// "dev": "vite --port 3003",
 function App() {
   const [count, setCount] = useState(0)
 
