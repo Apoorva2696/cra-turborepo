@@ -44,6 +44,10 @@ function App() {
       <Divider/>
       <CardContent>
       <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/>
+      <Divider sx={{ margin: '30px 0 30px 0' }}/>
+      <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+      Add Task
+      </Typography>
       <ToDoForm addTask={addTask}/>
       </CardContent>
       </Card>
