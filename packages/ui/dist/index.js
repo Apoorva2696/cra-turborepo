@@ -9533,7 +9533,8 @@ var Button_default = Button;
 var React14 = __toESM(require("react"));
 var CustomButton = (props) => /* @__PURE__ */ React14.createElement(Button_default, {
   variant: "contained",
-  ...props
+  ...props,
+  sx: { margin: "10px" }
 }, props.label);
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

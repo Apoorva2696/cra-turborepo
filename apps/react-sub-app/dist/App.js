@@ -33,6 +33,7 @@ var import_react2 = require("react");
 
 // src/Components/CustomForm.jsx
 var import_react = __toESM(require("react"));
+var import_ui = require("ui");
 var import_jsx_runtime = require("react/jsx-runtime");
 var CustomForm = ({ addTask, userInput, setUserInput }) => {
   const handleChange = (e) => {
@@ -52,8 +53,8 @@ var CustomForm = ({ addTask, userInput, setUserInput }) => {
         onChange: handleChange,
         placeholder: "Enter task..."
       }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-        children: "Submit"
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_ui.CustomButton, {
+        label: "Submit"
       })
     ]
   });

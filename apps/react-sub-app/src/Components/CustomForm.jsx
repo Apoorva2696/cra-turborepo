@@ -1,4 +1,5 @@
 import React from 'react';
+import { CustomButton } from 'ui';
 
 const CustomForm = ({ addTask, userInput, setUserInput }) => {
 
@@ -14,7 +15,7 @@ const CustomForm = ({ addTask, userInput, setUserInput }) => {
     return (
         <form onSubmit={handleSubmit}>
             <input value={userInput} type="text" onChange={handleChange} placeholder="Enter task..."/>
-            <button>Submit</button>
+            <CustomButton label='Submit'/>
         </form>
     );
 };

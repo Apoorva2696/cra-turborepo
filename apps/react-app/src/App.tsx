@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ToDoList from "./Components/ToDoList";
 import ToDoForm from 'react-sub-app';
-import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
+import { AppBar, Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
 
 function App() {
   
@@ -37,6 +37,9 @@ function App() {
 
   return (
     <div className="App">
+      <AppBar position="static" sx={{height: '70px', background: 'rgba(255, 255, 255, 0.7)'}}>
+      <Typography sx={{ fontSize: 36, color: 'black', padding: '10px'}}> To-do Application </Typography>
+      </AppBar>
       <Card variant="outlined" sx={{ width: '600px', margin: '100px 0 0 500px' }}>
       <CardHeader title={<Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
       To-Do List

@@ -9530,7 +9530,8 @@ var Button_default = Button;
 import * as React14 from "react";
 var CustomButton = (props) => /* @__PURE__ */ React14.createElement(Button_default, {
   variant: "contained",
-  ...props
+  ...props,
+  sx: { margin: "10px" }
 }, props.label);
 export {
   CustomButton

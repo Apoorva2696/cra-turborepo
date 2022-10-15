@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // src/Components/CustomForm.jsx
 import React from "react";
+import { CustomButton } from "ui";
 import { jsx, jsxs } from "react/jsx-runtime";
 var CustomForm = ({ addTask, userInput, setUserInput }) => {
   const handleChange = (e) => {
@@ -22,8 +23,8 @@ var CustomForm = ({ addTask, userInput, setUserInput }) => {
         onChange: handleChange,
         placeholder: "Enter task..."
       }),
-      /* @__PURE__ */ jsx("button", {
-        children: "Submit"
+      /* @__PURE__ */ jsx(CustomButton, {
+        label: "Submit"
       })
     ]
   });
